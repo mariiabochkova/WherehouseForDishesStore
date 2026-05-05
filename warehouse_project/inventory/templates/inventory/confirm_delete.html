@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="alert alert-danger shadow-sm mx-auto text-center" style="max-width: 500px;">
+    <h3>{% trans "Видалення" %}</h3>
+    <p class="lead">{% trans "Ви впевнені, що хочете видалити запис" %} <strong>"{{ object.name }}"</strong>?</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div class="mt-4">
+            <button type="submit" class="btn btn-danger px-4">{% trans "Так, видалити" %}</button>
+            <a href="javascript:history.back()" class="btn btn-secondary px-4">{% trans "Скасувати" %}</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,351 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-04 21:03+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\inventory\forms.py:77
+msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr ""
+
+#: .\inventory\models.py:9
+msgid "Назва відділу"
+msgstr "List of departments"
+
+#: .\inventory\models.py:10
+msgid "Адреса відділу"
+msgstr "List of departments"
+
+#: .\inventory\models.py:14
+msgid "Назва постачальника"
+msgstr "List of suppliers"
+
+#: .\inventory\models.py:15
+#: .\inventory\templates\inventory\suppliers_list.html:13
+msgid "Відповідальна особа"
+msgstr "Person in charge"
+
+#: .\inventory\models.py:16
+#: .\inventory\templates\inventory\suppliers_list.html:14
+msgid "Телефон"
+msgstr "Phone"
+
+#: .\inventory\models.py:17
+#: .\inventory\templates\inventory\suppliers_list.html:15
+msgid "Е-маіл"
+msgstr "E-mail"
+
+#: .\inventory\models.py:18
+#: .\inventory\templates\inventory\department_list.html:13
+#: .\inventory\templates\inventory\suppliers_list.html:16
+msgid "Адреса"
+msgstr "Address"
+
+#: .\inventory\models.py:22
+msgid "Назва одиниці"
+msgstr "Price per unit"
+
+#: .\inventory\models.py:23 .\inventory\templates\inventory\units_list.html:13
+msgid "Скорочення"
+msgstr "Abbreviation"
+
+#: .\inventory\models.py:27
+msgid "Назва товару"
+msgstr "List of products"
+
+#: .\inventory\models.py:32
+#: .\inventory\templates\inventory\invoice_list.html:12
+msgid "Дата"
+msgstr "Date"
+
+#: .\inventory\models.py:40 .\inventory\models.py:48
+#: .\inventory\templates\inventory\details_list.html:13
+#: .\inventory\templates\inventory\stock_list.html:10
+msgid "Кількість"
+msgstr "Amount"
+
+#: .\inventory\models.py:49
+#: .\inventory\templates\inventory\details_list.html:14
+msgid "Ціна за одиницю"
+msgstr "Price per unit"
+
+#: .\inventory\models.py:50
+msgid "Загальна ціна"
+msgstr "Overall price"
+
+#: .\inventory\templates\base.html:8
+msgid "Складська Система. Виконала Бочкова Марія"
+msgstr "Warehouse System. Designed by Maria Bochkova"
+
+#: .\inventory\templates\base.html:36
+msgid "Товари"
+msgstr "Products"
+
+#: .\inventory\templates\base.html:37
+msgid "Накладні"
+msgstr "Invoices"
+
+#: .\inventory\templates\base.html:38
+#: .\inventory\templates\inventory\stock_list.html:4
+msgid "Залишки"
+msgstr "Stock"
+
+#: .\inventory\templates\base.html:39
+msgid "Відділи"
+msgstr "Departments"
+
+#: .\inventory\templates\base.html:40
+msgid "Постачальники"
+msgstr "Suppliers"
+
+#: .\inventory\templates\base.html:41
+msgid "Одиниці"
+msgstr "Units"
+
+#: .\inventory\templates\base.html:47
+msgid "Вийти"
+msgstr "Log out"
+
+#: .\inventory\templates\base.html:50
+#: .\inventory\templates\registration\login.html:10
+msgid "Увійти"
+msgstr "Sign in"
+
+#: .\inventory\templates\base.html:51
+msgid "Реєстрація"
+msgstr "Sign in"
+
+#: .\inventory\templates\base.html:87
+msgid "2026 Система обліку приходу товару. Бочкова Марія."
+msgstr "2026 System for Tracking Incoming Goods. Maria Bochkova."
+
+#: .\inventory\templates\inventory\confirm_delete.html:5
+msgid "Видалення"
+msgstr "Deletion"
+
+#: .\inventory\templates\inventory\confirm_delete.html:6
+msgid "Ви впевнені, що хочете видалити запис"
+msgstr "Are you sure you want to delete this entry"
+
+#: .\inventory\templates\inventory\confirm_delete.html:11
+msgid "Так, видалити"
+msgstr "Yes, delete"
+
+#: .\inventory\templates\inventory\confirm_delete.html:12
+#: .\inventory\templates\inventory\form.html:16
+#: .\inventory\templates\registration\change_username.html:19
+msgid "Скасувати"
+msgstr "Cancel"
+
+#: .\inventory\templates\inventory\department_list.html:4
+msgid "Список відділів"
+msgstr "List of departments"
+
+#: .\inventory\templates\inventory\department_list.html:6
+#: .\inventory\templates\inventory\details_list.html:6
+#: .\inventory\templates\inventory\goods_list.html:6
+#: .\inventory\templates\inventory\invoice_list.html:6
+#: .\inventory\templates\inventory\suppliers_list.html:6
+#: .\inventory\templates\inventory\units_list.html:6
+msgid "Додати"
+msgstr "Add"
+
+#: .\inventory\templates\inventory\department_list.html:12
+#: .\inventory\templates\inventory\goods_list.html:12
+#: .\inventory\templates\inventory\suppliers_list.html:12
+#: .\inventory\templates\inventory\units_list.html:12
+msgid "Назва"
+msgstr "Name"
+
+#: .\inventory\templates\inventory\department_list.html:14
+#: .\inventory\templates\inventory\details_list.html:15
+#: .\inventory\templates\inventory\goods_list.html:14
+#: .\inventory\templates\inventory\invoice_list.html:16
+#: .\inventory\templates\inventory\suppliers_list.html:17
+#: .\inventory\templates\inventory\units_list.html:14
+msgid "Дії"
+msgstr "Actions"
+
+#: .\inventory\templates\inventory\department_list.html:26
+#: .\inventory\templates\inventory\details_list.html:28
+#: .\inventory\templates\inventory\goods_list.html:26
+#: .\inventory\templates\inventory\invoice_list.html:32
+#: .\inventory\templates\inventory\suppliers_list.html:32
+#: .\inventory\templates\inventory\units_list.html:26
+msgid "Редагувати"
+msgstr "Edit"
+
+#: .\inventory\templates\inventory\department_list.html:31
+#: .\inventory\templates\inventory\details_list.html:33
+#: .\inventory\templates\inventory\goods_list.html:31
+#: .\inventory\templates\inventory\invoice_list.html:37
+#: .\inventory\templates\inventory\suppliers_list.html:37
+#: .\inventory\templates\inventory\units_list.html:31
+msgid "Видалити"
+msgstr "Delete"
+
+#: .\inventory\templates\inventory\details_list.html:4
+msgid "Деталі накладної"
+msgstr "Invoice details"
+
+#: .\inventory\templates\inventory\details_list.html:4
+msgid "від"
+msgstr "from"
+
+#: .\inventory\templates\inventory\details_list.html:12
+#: .\inventory\templates\inventory\stock_list.html:8
+msgid "Товар"
+msgstr "Product"
+
+#: .\inventory\templates\inventory\details_list.html:40
+#: .\inventory\templates\registration\profile.html:15
+msgid "Назад"
+msgstr "Back"
+
+#: .\inventory\templates\inventory\form.html:17
+msgid "Зберегти"
+msgstr "Save"
+
+#: .\inventory\templates\inventory\goods_list.html:4
+msgid "Список товарів"
+msgstr "List of products"
+
+#: .\inventory\templates\inventory\goods_list.html:13
+msgid "Одиниця"
+msgstr "Unit"
+
+#: .\inventory\templates\inventory\invoice_list.html:4
+msgid "Список накладних"
+msgstr "List of invoices"
+
+#: .\inventory\templates\inventory\invoice_list.html:13
+msgid "Постачальник"
+msgstr "Supplier"
+
+#: .\inventory\templates\inventory\invoice_list.html:14
+#: .\inventory\templates\inventory\stock_list.html:9
+msgid "Відділ"
+msgstr "Department"
+
+#: .\inventory\templates\inventory\invoice_list.html:15
+msgid "Деталі"
+msgstr "Details"
+
+#: .\inventory\templates\inventory\invoice_list.html:28
+msgid "Переглянути"
+msgstr "View"
+
+#: .\inventory\templates\inventory\suppliers_list.html:4
+msgid "Список постачальників"
+msgstr "List of suppliers"
+
+#: .\inventory\templates\inventory\units_list.html:4
+msgid "Список одиниці виміру"
+msgstr "List of units of measurement"
+
+#: .\inventory\templates\registration\change_password.html:7
+msgid "Зміна пароля"
+msgstr "Change password"
+
+#: .\inventory\templates\registration\change_password.html:11
+msgid "Будь ласка, введіть старий пароль для підтвердження особи."
+msgstr "Please enter your old password to verify your identity."
+
+#: .\inventory\templates\registration\change_password.html:19
+msgid "Оновити пароль"
+msgstr "Change password"
+
+#: .\inventory\templates\registration\change_password.html:22
+msgid "Назад до профілю"
+msgstr "My Profile"
+
+#: .\inventory\templates\registration\change_username.html:7
+msgid "Зміна логіна"
+msgstr "Change username"
+
+#: .\inventory\templates\registration\change_username.html:16
+msgid "Зберегти зміни"
+msgstr "Save"
+
+#: .\inventory\templates\registration\login.html:6
+msgid "Вхід у систему"
+msgstr "Log in"
+
+#: .\inventory\templates\registration\login.html:13
+msgid "Немає аккаунта?"
+msgstr "Don't have an account?"
+
+#: .\inventory\templates\registration\login.html:13
+#: .\inventory\templates\registration\register.html:13
+msgid "Зареєструватися"
+msgstr "Sign up"
+
+#: .\inventory\templates\registration\profile.html:5
+msgid "Мій профіль"
+msgstr "My Profile"
+
+#: .\inventory\templates\registration\profile.html:7
+msgid "Логін:"
+msgstr "Username:"
+
+#: .\inventory\templates\registration\profile.html:8
+msgid "Ваша роль"
+msgstr "Your role"
+
+#: .\inventory\templates\registration\profile.html:9
+msgid "Без ролі"
+msgstr "No role"
+
+#: .\inventory\templates\registration\profile.html:12
+msgid "Змінити логін"
+msgstr "Change username"
+
+#: .\inventory\templates\registration\profile.html:13
+msgid "Змінити пароль"
+msgstr "Change password"
+
+#: .\inventory\templates\registration\profile.html:21
+msgid "Вам доступні інструменти керування персоналом"
+msgstr "HR management tools are available to you"
+
+#: .\inventory\templates\registration\profile.html:23
+msgid "Адміністрування користувачів"
+msgstr "User Administration"
+
+#: .\inventory\templates\registration\register.html:6
+msgid "Реєстрація нового користувача"
+msgstr "New User Registration"
+
+#: .\inventory\templates\registration\register.html:16
+msgid "Вже маєте аккаунт?"
+msgstr "Already have an account?"
+
+#: .\inventory\templates\registration\register.html:16
+msgid "Увійдіть тут"
+msgstr "Log in here"
+
+#: .\warehouse_project\settings.py:113
+msgid "Ukrainian"
+msgstr "Ukrainian"
+
+#: .\warehouse_project\settings.py:114
+msgid "English"
+msgstr "English"
+
+#: .\warehouse_project\settings.py:115
+msgid "Norwegian"
+msgstr "Norwegian"

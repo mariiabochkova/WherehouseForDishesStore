@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<h2 class="mb-4">{% trans "Залишки" %}</h2>
+<table class="table table-striped table-hover shadow-sm">
+    <thead>
+        <tr>
+            <th style="background-color: #56351E; color: white;">{% trans "Товар" %}</th>
+            <th style="background-color: #56351E; color: white;">{% trans "Відділ" %}</th>
+            <th style="background-color: #56351E; color: white;">{% trans "Кількість" %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.goods.name }}</td>
+            <td>{{ item.department.name }}</td>
+            <td>{{ item.amount }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

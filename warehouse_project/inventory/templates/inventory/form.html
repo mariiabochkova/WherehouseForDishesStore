@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="card shadow-sm mx-auto" style="max-width: 600px;">
+    <div class="card-header text-white" style="background-color: #56351E;"></div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            
+            <!-- Рендеринг полів форми з Bootstrap стилями -->
+            <div class="mb-3">
+                {{ form.as_p }}
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a href="javascript:history.back()" class="btn btn-secondary">{% trans "Скасувати" %}</a>
+                <button type="submit" style="background-color: #2660A4" class="btn btn-primary">{% trans "Зберегти" %}</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

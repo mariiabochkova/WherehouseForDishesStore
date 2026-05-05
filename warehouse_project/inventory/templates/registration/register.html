@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="card mx-auto mt-5" style="max-width: 500px;">
+    <div class="card-header bg-warning text-dark">
+        <h3 class="mb-0 text-center">{% trans "Реєстрація нового користувача" %}</h3>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-success">{% trans "Зареєструватися" %}</button>
+            </div>
+        </form>
+        <p class="text-center">{% trans "Вже маєте аккаунт?" %} <a href="{% url 'login' %}">{% trans "Увійдіть тут" %}</a></p>
+    </div>
+</div>
+{% endblock %}
+

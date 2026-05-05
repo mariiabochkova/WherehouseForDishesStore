@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<h2 class="mb-4">{% trans "Список товарів" %}</h2>
+{% if perms.inventory.change_arrivaldetails %}
+<a href="{% url 'goods_create' %}" class="btn btn-lg mb-2 btn-warning" style="background-color: #F19953;">{% trans "Додати" %}</a>
+{% endif %}
+<table class="table table-striped table-hover shadow-sm">
+    <thead>
+        <tr>
+            <th style="background-color: #56351E; color: white;">ID</th>
+            <th style="background-color: #56351E; color: white;">{% trans "Назва" %}</th>
+            <th style="background-color: #56351E; color: white;">{% trans "Одиниця" %}</th>
+            <th style="background-color: #56351E; color: white;">{% if perms.inventory.change_arrivaldetails %}{% trans "Дії" %}{% endif %}</th>
+            <th style="background-color: #56351E; color: white;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.unit.short_name }}</td>
+            <td>
+                {% if perms.inventory.change_arrivaldetails %}
+                    <a href="{% url 'goods_edit' pk=item.pk %}" class="btn mb-2 btn-sm btn-warning" style="background-color: #F19953;">{% trans "Редагувати" %}</a>
+                {% endif %}
+            </td>
+            <td>
+                {% if perms.inventory.change_arrivaldetails %}
+                    <a href="{% url 'goods_delete' pk=item.pk %}" class="btn btn-sm btn-error" style="background-color: #F19953;">{% trans "Видалити" %}</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

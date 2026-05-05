@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<h2 class="mb-4">{% trans "Деталі накладної" %} №{{ invoice.id }} {% trans "від" %} {{ invoice.data }}</h2>
+{% if perms.inventory.change_arrivaldetails %}
+<a href="{% url 'goods_create' %}" class="btn btn-lg mb-2 btn-warning" style="background-color: #F19953;">{% trans "Додати" %}</a>
+{% endif %}
+<table class="table table-striped table-hover shadow-sm">
+    <thead>
+        <tr>
+            <th style="background-color: #56351E; color: white;">ID</th>
+            <th style="background-color: #56351E; color: white;">{% trans "Товар" %}</th>
+            <th style="background-color: #56351E; color: white;">{% trans "Кількість" %}</th>
+            <th style="background-color: #56351E; color: white;">{% trans "Ціна за одиницю" %}</th>
+            <th style="background-color: #56351E; color: white;">{% if perms.inventory.change_arrivaldetails %}{% trans "Дії" %}{% endif %}</th>
+            <th style="background-color: #56351E; color: white;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in details %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.goods.name }}</td>
+            <td>{{ item.amount }}</td>
+            <td>{{ item.price_for_unit }}</td>
+            <td>
+                {% if perms.inventory.change_arrivaldetails %}
+                <a href="{% url 'details_edit' invoice_id=invoice.id pk=item.pk %}" class="btn mb-2 btn-sm btn-warning" style="background-color: #F19953;">{% trans "Редагувати" %}</a>
+                {% endif %}
+            </td>
+            <td>
+                {% if perms.inventory.change_arrivaldetails %}
+                <a href="{% url 'details_delete' invoice_id=invoice.id pk=item.pk %}" class="btn btn-sm btn-error" style="background-color: #F19953;">{% trans "Видалити" %}</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="javascript:history.back()" class="btn btn-md btn-error" style="background-color: #F19953;">{% trans "Назад" %}</a>
+{% endblock %}

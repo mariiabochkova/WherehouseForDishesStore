@@ -1,0 +1,93 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="uk" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% trans "Складська Система. Виконала Бочкова Марія" %}{% endblock %}</title>
+
+    <!-- Підключення Bootstrap через CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #EDF7F6; }
+        .navbar-brand { font-weight: bold; }
+        footer { padding: 20px 0; background: #2660a4; }
+
+        .icon-recolor {
+            filter: brightness(0) invert(1);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background-color: #2660a4;">
+            <div class="container">
+                <a class="navbar-brand" >HOUSE OF DISHES</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'goods_list' %}">{% trans "Товари" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'invoice_list' %}">{% trans "Накладні" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'stock_list' %}">{% trans "Залишки" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'department_list' %}">{% trans "Відділи" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'suppliers_list' %}">{% trans "Постачальники" %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'units_list' %}">{% trans "Одиниці" %}</a></li>
+                    </ul>
+                    <div class="ms-auto d-flex align-items-center">
+                        {% if user.is_authenticated %}
+                            <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-outline-light btn-sm">{% trans "Вийти" %}</button>
+                            </form>
+                        {% else %}
+                            <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm me-2">{% trans "Увійти" %}</a>
+                            <a href="{% url 'register' %}" class="btn btn-warning btn-sm">{% trans "Реєстрація" %}</a>
+                        {% endif %}
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <form action="{% url 'set_language' %}" method="post" class="d-flex align-items-center ms-2">
+    {% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}">
+    <select name="language" onchange="this.form.submit()" class="form-select form-select-sm" style="width: auto;">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+                {{ language.name_local }}
+            </option>
+        {% endfor %}
+    </select>
+</form>
+                        <a href="{% url 'profile' %}">
+                            <img src="{% static 'images/icon.png' %}" alt="User" class="icon-recolor" style="height: 35px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-shrink-0">
+        <div class="container mt-4">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer class="mt-auto text-center text-white">
+        <div class="container">
+            <p class="mb-0">&copy; {% trans "2026 Система обліку приходу товару. Бочкова Марія." %}</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

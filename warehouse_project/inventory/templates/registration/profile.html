@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="card mx-auto mt-4" style="max-width: 500px;">
+    <div class="card-header bg-primary text-white"><h3>{% trans "Мій профіль" %}</h3></div>
+    <div class="card-body">
+        <p><strong>{% trans "Логін:" %}</strong> {{ user.username }}</p>
+        <p><strong>{% trans "Ваша роль" %}:</strong>
+            {% for group in user.groups.all %} {{ group.name }}{% empty %}{% trans "Без ролі" %}{% endfor %}
+        </p>
+        <div class="d-grid gap-2">
+            <a href="{% url 'change_username' %}" class="btn btn-outline-primary">{% trans "Змінити логін" %}</a>
+            <a href="{% url 'password_change' %}" class="btn mb-4 btn-outline-danger">{% trans "Змінити пароль" %}</a>
+        </div>
+        <a href="javascript:history.back()" class="btn mb-2 btn-secondary" style="background-color: #F19953;">{% trans "Назад" %}</a>
+    </div>
+</div>
+{% if user.is_staff %}
+    <hr>
+    <div class="d-grid gap-2 text-center">
+        <p class="text-muted small">{% trans "Вам доступні інструменти керування персоналом" %}</p>
+        <a href="/admin/auth/user/" class="btn btn-dark">
+            <i class="bi bi-shield-lock"></i> {% trans "Адміністрування користувачів" %}
+        </a>
+    </div>
+{% endif %}
+{% endblock %}
+
